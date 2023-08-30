@@ -36,10 +36,10 @@ const SettingsPage: React.FC<SettingsPageProps> = async ({
     }
 
     return (
-        <div
-        className="flex-col">
-            <div className="flex-1 space-y-4 p-8 pt-6">Hello Settings</div>
-            <SettingsForm initialData={store} />
+        <div className="flex-col">
+            <div className="flex-1 space-y-4 p-8 pt-6">
+                <SettingsForm initialData={store} />
+            </div>
         </div>
     );
 }

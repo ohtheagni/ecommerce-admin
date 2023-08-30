@@ -17,6 +17,8 @@ export default async function DashboardLayout({
         redirect('/sign-in');
     }
 
+
+
     // if active user checks if any stores have been created allready
     const store = await prismadb .store.findFirst({
         where: {
