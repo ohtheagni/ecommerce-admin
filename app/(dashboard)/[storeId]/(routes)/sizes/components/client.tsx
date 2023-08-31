@@ -1,19 +1,18 @@
 "use client"
 
-// a client component where we load all of our billboards
+// a client component where we load all of our sizes
 
 import { Plus } from 'lucide-react'
 import { useParams, useRouter } from 'next/navigation'
-import { Billboard } from '@prisma/client'
+
 
 import { Button } from '@/components/ui/button'
 import { Heading } from '@/components/ui/Heading'
 import { Separator } from '@/components/ui/separator'
-
-import { SizeColumn, columns } from './columns'
 import { DataTable } from '@/components/ui/data-table'
 import { ApiList } from '@/components/ui/api-list'
 
+import { SizeColumn, columns } from './columns'
 
 
 interface SizesClientProps {
@@ -28,7 +27,7 @@ export const SizesClient: React.FC<SizesClientProps> = ({
 
   return (
     <>
-        <div className='flex items-center justify-between'>Billboard client
+        <div className='flex items-center justify-between'>
             <Heading
              title={`Sizes (${data.length})`}
              description="Manage sizes for your store"
@@ -39,7 +38,7 @@ export const SizesClient: React.FC<SizesClientProps> = ({
             </Button>
         </div>
         <Separator />
-        <DataTable columns={columns} searchKey="label" data={data} />
+        <DataTable columns={columns} searchKey="name" data={data} />
         <Heading title="API" description="API calls for Sizes" />
         <Separator />
         <ApiList entityName='sizes' entityIdName='sizeId'/>
