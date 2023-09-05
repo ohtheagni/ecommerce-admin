@@ -7,7 +7,7 @@ const ProductsPage = async ({
 }: {
   params: { productId: string, storeId: string }
 }) => {
-  // fetch an existing billboard in our url
+
    const product = await prismadb.product.findUnique({
     where: {
       id: params.productId
